@@ -1,12 +1,12 @@
 import LabelInput from "../../components/LabelInput/Labelinput";
-import LabelOverview from "../../components/LabelsOverview/LabelsOverview";
+import LabelList from "./../../components/LabelList/LabelList";
 import "./Main.scss";
 
 function Main() {
   return (
     <div className="main">
       <LabelInput />
-      <LabelOverview />
+      <LabelList />
     </div>
   );
 }

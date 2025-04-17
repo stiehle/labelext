@@ -3,6 +3,13 @@
   padding: 1rem;
   // width: 100%;
 
+  &__title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
   &__button {
     margin-top: 1rem;
   }

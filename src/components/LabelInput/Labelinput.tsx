@@ -8,7 +8,8 @@ import { LabelContext } from "../../context/LabelContext";
 
 function LabelInput() {
   const articleNumber = useFormInput("", true);
-  const articleText = useFormInput("", true);
+  const articleText = useFormInput("", false);
+  const labelQantity = useFormInput("1", false);
 
   const { labelDispatch } = useContext(LabelContext);
   const navigate = useNavigate();
@@ -19,6 +20,7 @@ function LabelInput() {
       id: Date.now(),
       articleNumber: Number(articleNumber.value),
       articleText: articleText.value,
+      labelQantity: Number(labelQantity.value),
     };
     console.log(newLabel);
     labelDispatch({ type: "ADD_LABEL", label: newLabel });
@@ -47,6 +49,14 @@ function LabelInput() {
         id={"articleText"}
         name={"Artikel Text"}
         size={"xxl"}
+      />
+      <TextInput
+        value={labelQantity.value}
+        onChange={labelQantity.handleInputChangeEvent}
+        error={labelQantity.error}
+        id={"labelQantity"}
+        name={"Menge"}
+        size={"short"}
       />
       <div className="label-input__wrapper">
         <div className="label-input__button">

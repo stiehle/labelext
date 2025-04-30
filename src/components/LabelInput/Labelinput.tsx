@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 import "./LabeInput.scss";
 import { LabelContext } from "../../context/LabelContext";
+import { Label } from "../../types/Label";
 
 function LabelInput() {
   const articleNumber = useFormInput("", true);
@@ -15,7 +16,7 @@ function LabelInput() {
   const navigate = useNavigate();
 
   function newLabel() {
-    const newLabel = {
+    const newLabel: Label = {
       // id: Math.floor(Math.random() * 1000),
       id: Date.now(),
       articleNumber: Number(articleNumber.value),

@@ -19,7 +19,7 @@ function LabelInput() {
     const newLabel: Label = {
       // id: Math.floor(Math.random() * 1000),
       id: Date.now(),
-      articleNumber: Number(articleNumber.value),
+      articleNumber: articleNumber.value,
       articleText: articleText.value,
       labelQantity: Number(labelQantity.value),
     };
@@ -41,8 +41,8 @@ function LabelInput() {
           onChange={articleNumber.handleInputChangeEvent}
           error={articleNumber.error}
           id={"articleNumber"}
-          name={"Artikel"}
-          size={"short"}
+          name={"QRCODE Inhalt"}
+          size={"xxl"}
         />
         <TextInput
           value={articleText.value}

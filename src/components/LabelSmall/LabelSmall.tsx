@@ -9,10 +9,10 @@ function LabelSmall({ articleText, articleNumber }: Label) {
         <div className="label__article">
           <div className="label__qrcode">
             <div className="label__qrcode-image">
-              <Qrcode text={String(articleNumber)} />
+              <Qrcode text={articleNumber} />
             </div>
           </div>
-          <div className="label__articlenumber">
+          <div className="label__qrcode-text">
             <p className="label__articlenumber-text">{articleNumber}</p>
           </div>
         </div>

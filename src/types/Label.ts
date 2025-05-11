@@ -1,6 +1,6 @@
 export type Label = {
   id: number;
-  articleNumber: number;
+  articleNumber: string;
   articleText: string;
   labelQantity: number;
 };

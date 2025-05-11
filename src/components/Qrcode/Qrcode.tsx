@@ -5,15 +5,19 @@ type Props = {
   text: string;
 };
 
-function QrcodeImage({ text: article }: Props) {
-  function getQrcode() {
+function QrcodeImage({ text }: Props) {
+  if (text === "") {
+    text = " ";
+  }
+  function getQrcode(data: string) {
     let base64Image = "";
     try {
       const writer = new MultiFormatWriter();
-      const qrCodeData = article;
+      let qrCodeData = data;
+
       const hints = new Map();
       hints.set("MARGIN", 0);
-      const bitMatrix = writer.encode(qrCodeData, BarcodeFormat.QR_CODE, 200, 200, hints);
+      const bitMatrix = writer.encode(qrCodeData, BarcodeFormat.QR_CODE, 400, 400, hints);
 
       const width = bitMatrix.getWidth();
       const height = bitMatrix.getHeight();
@@ -50,7 +54,7 @@ function QrcodeImage({ text: article }: Props) {
 
   return (
     <>
-      <img src={`data:image/png;base64,${getQrcode()}`} alt="QR Code" />
+      <img src={`data:image/png;base64,${getQrcode(text)}`} alt="QR Code" />
     </>
   );
 }
